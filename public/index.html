@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authed | OAuth Demo</title>
+  </head>
+  <body>
+    <h3>Select your OAuth Provider</h3>
+    <ul>
+      <li><a id="gh-signin" style="padding: 5px;">Sign in with GitHub</a></li>
+      <li><a id="tw-signin" style="padding: 5px;">Sign in with Twitter</a></li>
+    </ul>
+    <script>
+      const redirectURI = "http://localhost:3005/oauth/github/redirect";
+
+      // This is a public key which can be exposed
+      const GH_CLIENT_ID = "0701f98085e49b2a1bde";
+      const GH_AUTH_URI = "https://github.com/login/oauth/authorize";
+      // Add OAuth link to GitHub Button
+      const btn_gh_signin = document.getElementById("gh-signin");
+      btn_gh_signin.href = `${GH_AUTH_URI}?client_id=${GH_CLIENT_ID}&redirect_uri=${redirectURI}`;
+    </script>
+  </body>
+</html>
